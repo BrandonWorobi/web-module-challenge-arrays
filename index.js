@@ -190,8 +190,19 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(originalFlavors) {
+    var totalList = [];
+    var finalList = [];
+    for (var i = 0; i < originalFlavors.length; i++) {
+        for (var x = originalFlavors.length; x > 0; x--) {
+            if (
+                originalFlavors[i].includes(originalFlavors[x]) &&
+                originalFlavors[i] !== originalFlavors[x]
+            ) {
+                totalList.push(originalFlavors[x]);
+            }
+        }
+    }
 }
 
 
